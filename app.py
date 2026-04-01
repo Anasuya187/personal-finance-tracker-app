@@ -46,7 +46,7 @@ with st.sidebar:
                cat = manual_cat
             add_expense(d, desc, cat, amt, pay)
             st.success(f"Added ({cat}).")
-            st.experimental_rerun()
+            st.rerun()
 
     st.divider()
     st.header("Import CSV")
@@ -69,7 +69,7 @@ with st.sidebar:
                         add_expense(r["date"], str(r["description"]), cat, float(
                             r["amount"]), str(r["payment_method"]))
                 st.success("Import complete.")
-                st.experimental_rerun()
+                st.rerun()
         except Exception as e:
             st.error(f"Import failed: {e}")
 
